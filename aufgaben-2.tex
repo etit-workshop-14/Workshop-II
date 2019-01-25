@@ -300,12 +300,20 @@ Die gemessenen Bode-Diagramme des Hoch- und Tiefpasses stimmen mit den simuliert
 
 \newpage
 \begin{figure}[htb]
+    \includegraphics[width=14cm]{./pictures/Aufbau/Ueberlagerung}
+    \caption{Praktischer Aufbau der Überlagerungsschaltung}
+    \label{fig:Überlagerung}
+\end{figure}
+
+\begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Gesamtschaltung}
     \caption{Ausgangsspannung des Addierers}
     \label{fig:AddiererAusgangsspannung}
 \end{figure}
 
 Die ermittelte Kurve zeigt, dass einer der Filter eine negative Spannung erzeugt. Nach weiteren Simulationen mit Spice wurde festgestellt, dass der Tiefpass negative Spannungen erzeugt. Aufgrund dessen muss das Ausgangssignal des Tiefpasses invertiert werden, da sonst die Ausgangssignale nicht addiert, sonst subtrahiert werden.
+
+\newpage
 
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Gesamtschaltung_Invertiert}
@@ -318,12 +326,13 @@ Wir beobachten nun eine maximale Dämpfung des Signals bei 100Hz und Maximum bei
 \\
 Einen solchen Filter bezeichnet man als 2-Band-Equalizer, da dieser aus einem kombinierten Hoch- und Tiefpass besteht und die jeweiligen Ausgangssignale des Hoch- und Tiefpasses einstellbar kombiniert werden können.
 
-\newpage
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Gesamtschaltung_Invertiert_10_90}
     \caption{Ausgangsspannung des Addierers mit invertiertem Tiefpass mit $R_1 = 10k\Omega$ und $R_2 = 90k\Omega$}
     \label{fig:AddiererAusgangsspannungInvertiert}
 \end{figure}
+
+\newpage
 
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Gesamtschaltung_Invertiert_90_10}
@@ -333,42 +342,57 @@ Einen solchen Filter bezeichnet man als 2-Band-Equalizer, da dieser aus einem ko
 
 Durch die Einstellungen an den Potentiometern lässt sich einstellen, welche Frequenzbereiche gedämpft werden sollen.
 
-\newpage
 \subsubsection{Ergebnisse}
 
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Messungen/Gesamtschaltung_Test_0_0}
-    \caption{Gemessene ausgangsspannung mit $R_1 = 0\Omega$ und $R_2 = 0\Omega$}
+    \caption{Gemessene Ausgangsspannung mit $R_1 = 0\Omega$ und $R_2 = 0\Omega$}
     \label{fig:Gesamtschaltung_Test_0_0}
 \end{figure}
 
+\newpage
+
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Messungen/Gesamtschaltung_Test_50_50}
-    \caption{Gemessene ausgangsspannung mit $R_1 = 50k\Omega$ und $R_2 = 50k\Omega$}
+    \caption{Gemessene Ausgangsspannung mit $R_1 = 50k\Omega$ und $R_2 = 50k\Omega$}
     \label{fig:Gesamtschaltung_Test_50_50}
 \end{figure}
 
-\newpage
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Messungen/Gesamtschaltung_Test_100_100}
-    \caption{Gemessene ausgangsspannung mit $R_1 = 100k\Omega$ und $R_2 = 100k\Omega$}
+    \caption{Gemessene Ausgangsspannung mit $R_1 = 100k\Omega$ und $R_2 = 100k\Omega$}
     \label{fig:Gesamtschaltung_Test_100_100}
 \end{figure}
 
+\newpage
+
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Messungen/Gesamtschaltung_Test_10_90}
-    \caption{Gemessene ausgangsspannung mit $R_1 = 10k\Omega$ und $R_2 = 90k\Omega$}
+    \caption{Gemessene Ausgangsspannung mit $R_1 = 10k\Omega$ und $R_2 = 90k\Omega$}
     \label{fig:Gesamtschaltung_Test_10_90}
 \end{figure}
 
-\newpage
 \begin{figure}[htb]
     \includegraphics[width=16cm]{./pictures/Messungen/Gesamtschaltung_Test_90_10}
-    \caption{Gemessene ausgangsspannung mit $R_1 = 90k\Omega$ und $R_2 = 10k\Omega$}
+    \caption{Gemessene Ausgangsspannung mit $R_1 = 90k\Omega$ und $R_2 = 10k\Omega$}
     \label{fig:Gesamtschaltung_Test_90_10}
 \end{figure}
 
 Die blaue Kurve stellt den Amplitudeverlaug der Ausgangsspannung dar, die rote Kurve den phasenverlauf.
+
+\newpage
+
+\begin{figure}[htb]
+    \includegraphics[width=16cm]{./pictures/Messungen/Ueberlagerung_100_0}
+    \caption{Gemessene Ausgangsspannung bei $f_{1} = 254Hz$ und $f_{2} = 5080Hz$ mit $R_1 = 100k\Omega$ und $R_2 = 0\Omega$}
+    \label{fig:Überlagerung_100_0}
+\end{figure}
+
+\begin{figure}[htb]
+    \includegraphics[width=16cm]{./pictures/Messungen/Ueberlagerung_0_100}
+    \caption{Gemessene Ausgangsspannung bei $f_{1} = 254Hz$ und $f_{2} = 5080Hz$ mit $R_1 = 0\Omega$ und $R_2 = 100k\Omega$}
+    \label{fig:Überlagerung_0_100}
+\end{figure}
 
 \subsubsection{Diskussion}
 
@@ -379,6 +403,16 @@ Bei gleichen Werten der beiden Potis lässt sich eine waagerechte Übertragungsf
 \\
 \\
 Die Poti-Einstellungen bei $R_1 = 10k\Omega$ und $R_2 = 90k\Omega$ und bei $R_1 = 90k\Omega$ und $R_2 = 10k\Omega$ ergeben deckungsgleiche Verläufe der simulierten und gemessenen Ergebnissen. Im einen Fall werden tiefe Frequenzen gedämpft, im anderen werden hohe Frequenzen äquivalent gedämpft, wie wir es von unserem Equalizer erwarten.
+\\
+\\
+\\
+In den beiden Darstellungen stellt der blaue Graph die Eingansspannung mit 254Hz dar, die auf den Eingang des Equalizers gegeben wird und die grüne Kurve stellt das gemessene Ausgangssignal dar. Die Signale mit 254Hz und 5080Hz wurden mit den Anschlüssen des Spannungsteilers der virtuellen Masse verbunden.
+\\
+\\
+Am Ausgangssignal ist eine Überlagerung der beiden Eingangssignale zu erkennen. Man erkennt eine 20-fach höhere Frequenz des Ausgangssignals im Vergleich zum Eingangssignal. Bei 1.65V wird die Spannung in LenLab abgeschnitten, da das DAC nur Spannungen bis 1.65V liefert. Bei hohen Hochpasswerten ($R_{1} = 100k\Omega$ und $R_{2} = 0\Omega$) ist die Amplitude der Ausgangsspannung geringer als die Ausgangsspannung bei hohen Tiefpasswerten ($R_{1} = 0\Omega$ und $R_{2} = 100k\Omega$).
+\\
+\\
+Im Praxistest hat sich die Schaltung bewährt. Ein eingespeistes Musiksignal konnte mittels der Potis beeinflusst werden und somit hohe und Tiefe Tonfrequenzen reguliert werden. Auffällig war die schlechte Qualität (Rauschen) des Ausgangssignals. Wir schreiben dieses Rauschen der mangelnden Abschirmung und den schlechten Kontakten zwischen den einzelnen Bauteilen zu.
 
 \newpage
 \begin{sidewaysfigure}[htb]
