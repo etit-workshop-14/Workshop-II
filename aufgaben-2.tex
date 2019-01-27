@@ -80,7 +80,19 @@ Potentiometer & Potentiometer, 2x & 0...100 k$\Omega$\\
 \subsection{Motivation}
 
 \subsection{Literaturrecherche}
-
+Grundlagen
+In der Elektrotechnik bezeichnet ein Filter eine Schaltung, die sich bei verschiedenen Eingangsfrequenzen unterschiedlich verhält. Genauer bedeutet dies, dass schaltungsabhängig bestimmte Frequenzbereiche entweder verstärkt, gedämpft oder nicht beeinflusst werden. Zudem wird die Phasenverschiebung zwischen Ein- und Ausgangssignalen beeinflusst. Aufgrund dieser Eigenschaften finden Filterschaltungen Einsatz in unterschiedlichsten Anwendungen. Die gängigsten Filterarten sind der Hochpass, der tiefe Frequenzen dämpft und, wie der Name andeutet, hohe Frequenzen passieren lässt, der Tiefpass, der das Gegenstück zum Hochpass bildet, ebenso wie Bandpass und Bandsperre. Diese dämpfen nur Frequenzen innerhalb oder außerhalb eines bestimmten Frequenzbandes.
+Bandpassfilter werden zum Beispiel in der Telekommunikationstechnik, für den Rundfunk und in der Musikproduktion eingesetzt. Tiefpassfilter mit hoher Flankensteilheit werden zum Beispiel für die Datenverarbeitung verwendet, um Störsignale auszufiltern. Einen Spezialfall bilden die Allpassfilter, die keine Frequenzen dämpfen, sondern nur zur Phasenverschiebung verwendet werden.
+Die Klassifizierung von Filtern erfolgt in der Regel über ihre Funktion, Ordnung, Bauteilzusammensetzung und ihre Bauteilwerte. Passive Filter enthalten nur passive Bauelemente wie Kondensatoren, Widerstände und Spulen. Spulen und Kondensatoren fungieren hierbei als frequenzabhängige Widerstände und bestimmen die Kennwerte des jeweiligen Filters. Aktive Filter hingegen enthalten mindestens ein aktives Bauelement, wie Transistoren oder Operationsverstärker. Aktive Filter benötigen demnach eine externe Spannungsversorgung, um das aktive Element einsatzfähig zu machen und den Filter betreiben zu können.
+Eine Kenngröße eines Filters ist seine Ordnung. Der Wert der Ordnung eines Filters wird über dessen Steigung im Dämpfungsbereich des Bode-Diagramms ermittelt. Ein Filter mit Flankensteigung von 20dB/Dek hat eine Ordnung von 1. Pro zusätzlichen 20dB/Dek steigt die Filterordnung um 1. Demnach besitzt ein Filter mit einer Flankensteigung von 40dB/Dek eine Ordnung von 2. 
+Die Grenzfrequenz ist eine weitere wichtige Kenngröße von Filtern. Sie definiert den Übergang zwischen Durchlass- und Sperrbereich eines Filters und stellt die Frequenz dar, bei der das Signal des Filters um 3dB bzw. den Faktor $\sqrt{2}$ gedämpft wird.
+Die Knickfrequenz hingegen beschreibt die Frequenz, die sich an dem Schnittpunkt der Tangenten des Durchlass- und Sperrbereichs ermitteln lässt.
+\\
+\\
+Der charakteristische Amplituden- und Phasengang eines Filters wird in einem Bode-Diagramm dargestellt. Hierbei wird die Verstärkung oder Dämpfung der Amplitude des Eingangssignals und dessen Phasenverschiebung über einer logarithmischen Frequenzskala aufgetragen.
+\\
+\\
+Zur Beschreibung eines Filters wird guter Letzt noch der Qualitätsfaktor Q benötigt. Dieser beschreibt die Eigenschwingung bei Tief- und Hochpassfiltern. Für den Fall, dass der Wert Q gegen $\infty$ geht wird der Filter zum Oszillator, wodurch der Filter seine Funktion nicht mehr erfüllt und benachbarte Schaltungsteile beschädigen könnte. Für Q zwischen 1/2 und 0 filtert der Filter nicht mehr alle ungewünschten Frequenzen heraus, sondern lässt teilweise ungewünschte Frequenzen ungedämpft. Um beide Effekte möglichst gering zu halten ist eine Güte von Q = 1/2 anzustreben.
 
 \clearpage
 \section{Aufgaben}
@@ -406,10 +418,12 @@ Die Poti-Einstellungen bei $R_1 = 10k\Omega$ und $R_2 = 90k\Omega$ und bei $R_1 
 \\
 \\
 \\
-In den beiden Darstellungen stellt der blaue Graph die Eingansspannung mit 254Hz dar, die auf den Eingang des Equalizers gegeben wird und die grüne Kurve stellt das gemessene Ausgangssignal dar. Die Signale mit 254Hz und 5080Hz wurden mit den Anschlüssen des Spannungsteilers der virtuellen Masse verbunden.
+In den beiden Darstellungen stellt der blaue Graph die Eingansspannung mit 254Hz dar, die auf den Eingang des Equalizers gegeben wird und die grüne Kurve stellt das gemessene Ausgangssignal dar. Die beiden Eingangssignale werden mit einem zweiten Spannungsteiler überlagert, der dem Spannungsteiler der virtuellen Masse baugleich ist. 
 \\
 \\
-Am Ausgangssignal ist eine Überlagerung der beiden Eingangssignale zu erkennen. Man erkennt eine 20-fach höhere Frequenz des Ausgangssignals im Vergleich zum Eingangssignal. Bei 1.65V wird die Spannung in LenLab abgeschnitten, da das DAC nur Spannungen bis 1.65V liefert. Bei hohen Hochpasswerten ($R_{1} = 100k\Omega$ und $R_{2} = 0\Omega$) ist die Amplitude der Ausgangsspannung geringer als die Ausgangsspannung bei hohen Tiefpasswerten ($R_{1} = 0\Omega$ und $R_{2} = 100k\Omega$).
+Bei hohen Hochpasswerten ($R_{1} = 100k\Omega$ und $R_{2} = 0\Omega$) wird der tiefe Frequenzanteil gedämpft. Der hohe Frequenzanteil bleibt erhalten. Dies erkennt man an der Äquivalenz der Amplituden des Ein- und Ausgangssignals und der Schwingung um 0V des Ausganssignals.
+\\
+Bei hohen Tiefpasswerten ($R_{1} = 0\Omega$ und $R_{2} = 100k\Omega$) lässt sich eine starke Dämpfung der hohen Frequenzanteile des Ausgangssignals im Vergleich zum Eingangssignal erkennen. Die niedrigen Frequenzanteile werden jedoch nicht gedämpft. Die Ausgansspannung verläuft Phasengleich zur Eingangsspannung.
 \\
 \\
 Im Praxistest hat sich die Schaltung bewährt. Ein eingespeistes Musiksignal konnte mittels der Potis beeinflusst werden und somit hohe und Tiefe Tonfrequenzen reguliert werden. Auffällig war die schlechte Qualität (Rauschen) des Ausgangssignals. Wir schreiben dieses Rauschen der mangelnden Abschirmung und den schlechten Kontakten zwischen den einzelnen Bauteilen zu.
