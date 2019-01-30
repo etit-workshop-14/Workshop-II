@@ -85,7 +85,7 @@ Mittels der in Tabelle 1 dargestellten Materialien wurde eine komplexe Analyse u
 \\
 \\
 Zunächst wird ein allgemeiner Überblick der Funktion von Filtern verschiedener Ordnung gegeben. Im Folgenden wird Schritt für Schritt die Theorie mit entsprechenden Kommentaren praktisch umgesetzt, zusammen mit Bildern der Schaltungen und Diagrammen, die
-deutlich die Funktionalität der Filter zeigen. Abschließend wird das Resultat unserer Arbeit in einem von uns durcheführten Praxistest kurz zusammengefasst.
+deutlich die Funktionalität der Filter zeigen. Abschließend wird das Resultat unserer Arbeit in einem von uns durchgeführten Praxistest kurz zusammengefasst.
 
 \subsection{Literaturrecherche}
 Grundlagen
@@ -94,13 +94,13 @@ Bandpassfilter werden zum Beispiel in der Telekommunikationstechnik, für den Ru
 Die Klassifizierung von Filtern erfolgt in der Regel über ihre Funktion, Ordnung, Bauteilzusammensetzung und ihre Bauteilwerte. Passive Filter enthalten nur passive Bauelemente wie Kondensatoren, Widerstände und Spulen. Spulen und Kondensatoren fungieren hierbei als frequenzabhängige Widerstände und bestimmen die Kennwerte des jeweiligen Filters. Aktive Filter hingegen enthalten mindestens ein aktives Bauelement, wie Transistoren oder Operationsverstärker. Aktive Filter benötigen demnach eine externe Spannungsversorgung, um das aktive Element einsatzfähig zu machen und den Filter betreiben zu können.
 Eine Kenngröße eines Filters ist seine Ordnung. Der Wert der Ordnung eines Filters wird über dessen Steigung im Dämpfungsbereich des Bode-Diagramms ermittelt. Ein Filter mit Flankensteigung von 20dB/Dek hat eine Ordnung von 1. Pro zusätzlichen 20dB/Dek steigt die Filterordnung um 1. Demnach besitzt ein Filter mit einer Flankensteigung von 40dB/Dek eine Ordnung von 2. 
 Die Grenzfrequenz ist eine weitere wichtige Kenngröße von Filtern. Sie definiert den Übergang zwischen Durchlass- und Sperrbereich eines Filters und stellt die Frequenz dar, bei der das Signal des Filters um 3dB bzw. den Faktor $\sqrt{2}$ gedämpft wird.
-Die Knickfrequenz hingegen beschreibt die Frequenz, die sich an dem Schnittpunkt der Tangenten des Durchlass- und Sperrbereichs ermitteln lässt.
+Die Knickfrequenz hingegen beschreibt die Frequenz, die sich an dem Schnittpunkt der Tangenten des Durchlass- und Sperrbereichs ermitteln lässt. \cite{tkotz} \cite{kendall} \cite{tietze} 
 \\
 \\
-Der charakteristische Amplituden- und Phasengang eines Filters wird in einem Bode-Diagramm dargestellt. Hierbei wird die Verstärkung oder Dämpfung der Amplitude des Eingangssignals und dessen Phasenverschiebung über einer logarithmischen Frequenzskala aufgetragen.
+Der charakteristische Amplituden- und Phasengang eines Filters wird in einem Bode-Diagramm dargestellt. Hierbei wird die Verstärkung oder Dämpfung der Amplitude des Eingangssignals und dessen Phasenverschiebung über einer logarithmischen Frequenzskala aufgetragen. \cite{tkotz} \cite{tietze} 
 \\
 \\
-Zur Beschreibung eines Filters wird guter Letzt noch der Qualitätsfaktor Q benötigt. Dieser beschreibt die Eigenschwingung bei Tief- und Hochpassfiltern. Für den Fall, dass der Wert Q gegen $\infty$ geht wird der Filter zum Oszillator, wodurch der Filter seine Funktion nicht mehr erfüllt und benachbarte Schaltungsteile beschädigen könnte. Für Q zwischen 1/2 und 0 filtert der Filter nicht mehr alle ungewünschten Frequenzen heraus, sondern lässt teilweise ungewünschte Frequenzen ungedämpft. Um beide Effekte möglichst gering zu halten ist eine Güte von Q = 1/2 anzustreben.
+Zur Beschreibung eines Filters wird guter Letzt noch der Qualitätsfaktor Q benötigt. Dieser beschreibt die Eigenschwingung bei Tief- und Hochpassfiltern. Für den Fall, dass der Wert Q gegen $\infty$ geht wird der Filter zum Oszillator, wodurch der Filter seine Funktion nicht mehr erfüllt und benachbarte Schaltungsteile beschädigen könnte. Für Q zwischen 1/2 und 0 filtert der Filter nicht mehr alle ungewünschten Frequenzen heraus, sondern lässt teilweise ungewünschte Frequenzen ungedämpft. Um beide Effekte möglichst gering zu halten ist eine Güte von Q = 1/2 anzustreben. \cite{tkotz} \cite{lutz} \cite{tietze} 
 
 \clearpage
 \section{Aufgaben}
@@ -121,7 +121,7 @@ Zur Beschreibung eines Filters wird guter Letzt noch der Qualitätsfaktor Q ben�
     \label{fig:HochpassPraktisch}
 \end{figure}
 
-In der Aufgabenstellung wird ein Hochpass der Ordnung zwei gefordert. Diese Anforderung realisieren wir mittels zwei typischer RC-Höchpässe. Diese sind über einen Spannungsfolger gekoppelt. Der gesamte Hochpass ist mit einem weiteren Spannungsfolger vom weiteren Verlauf der Schaltung sicher in Hinsicht auf Rückkopplungen und unzulässiger Ströme abgetrennt.
+In der Aufgabenstellung wird ein Hochpass der Ordnung zwei gefordert. Diese Anforderung realisieren wir mittels zwei typischer RC-Hochpässe. Diese sind über einen Spannungsfolger gekoppelt. Der gesamte Hochpass ist mit einem weiteren Spannungsfolger vom weiteren Verlauf der Schaltung sicher in Hinsicht auf Rückkopplungen und unzulässiger Ströme abgetrennt.
 \\
 Um die Kondensatoren und die Widerstände zu dimensionieren, betrachten wir die Frequenzen des Sprachbereiches. Nach diesem Bereich richtet sich dann unsere Grenzfrequenz. Aus der Abbildung der Aufgabenstellung ergibt sich für den Hauptsprachbereich bei normalem Gespräch ein Frequenzbereich von ca. 175Hz - 4000Hz. Unsere angestrebte Frequenz liegt daher in der Mitte bei ca. 1600Hz. Bei der Dimensionierung ergeben sich zwei Unbekannte (Widerstand und Kondensator). Dabei wählen wir für den Kondensator 10nF, da unsere Anzahl an Kondensatoren begrenzt ist und wir weitaus mehr Widerstände besitzen und diese durch geschickte Kombination variieren können. Für die Grenzfrequenz gilt folgende Formel mit $\omega = 2\cdot \pi \cdot f$: 
 \gleichung{\omega=\frac{1}{R\cdot C}}{}
@@ -147,7 +147,7 @@ Die Übertragungsfunktion ergibt sich aus der Spannungsteilerregel und dem Verh�
 \\
 &= \frac{R}{\frac{R^2-j \frac{R}{\omega C}-j \frac{2R}{\omega C}-\frac{1}{(\omega C)^2}}{2R-j \frac{1}{\omega C}}}
 \\
-&= R\cdot \frac{2R-j \frac{1}{\omega C}}{R^2+j \frac{R}{\omega C}-j \frac{2R}{\omega C}-j \frac{1}{(\omega C)^2}}
+&= R\cdot \frac{2R-j \frac{1}{\omega C}}{R^2+j \frac{R}{\omega C}-j \frac{2R}{\omega C}-\frac{1}{(\omega C)^2}}
 \\
 &= \frac{2R^2-j\frac{R}{\omega C}}{R^2-j \frac{R}{\omega C}-\frac{1}{(\omega C)^2}}
 \end{split}
@@ -162,7 +162,7 @@ U_{a}(f)= \left(\frac{2R^2-j\frac{R}{\omega C}}{R^2-j \frac{1}{\omega C}-\frac{1
     \label{fig:HochpassBode}
 \end{figure}
 
-Die blaue Kurve stellt den geamten Hochpass dar, die violette Kurve nur einen einfachen Hochpass. Somit erkennt man anhand der Steigung einen Hochpass der Ordnung 2.
+Die blaue Kurve stellt den gesamten Hochpass dar, die violette Kurve nur einen einfachen Hochpass. Somit erkennt man anhand der Steigung einen Hochpass der Ordnung 2.
 
 \newpage
 \begin{figure}[htb]
@@ -179,7 +179,7 @@ Die blaue Kurve stellt den geamten Hochpass dar, die violette Kurve nur einen ei
 
 In der Aufgabenstellung wird zudem ein Tiefpass der Ordnung zwei gefordert. Diese Anforderung realisieren wir mittels zwei typischer RC-Tiefpässe. Diese sind über einen Spannungsfolger gekoppelt. Der gesamte Tiefpass ist mit einem weiteren Spannungsfolger vom weiteren Verlauf der Schaltung sicher in Hinsicht auf Rückkopplungen und unzulässiger Ströme abgetrennt.
 
-Wir wählen für unsere Kondensatoren und Widerstände die analogen Werte zum Hochpass, da wir die selbe Grenzfrequenz anstreben und die Frequenzformel des Hochpasses analog für den Tiefpass gilt. Somit erhalten wir auch hier eine Grenzfrequenz von $1591.6Hz$.
+Wir wählen für unsere Kondensatoren und Widerstände die analogen Werte zum Hochpass, da wir dieselbe Grenzfrequenz anstreben und die Frequenzformel des Hochpasses analog für den Tiefpass gilt. Somit erhalten wir auch hier eine Grenzfrequenz von $1591.6Hz$.
 
 \newpage
 Die Übertragungsfunktion ergibt sich gleichermaßen aus der Spannungsteilerregel und dem Verhältnis $U_{t2}$ zu $U_{e}$:
@@ -214,7 +214,7 @@ U_{a}(f) = \frac{\omega CR-2j}{1+(\omega CR)^2-3jR\omega C} * U_{e}(f)
     \label{fig:TiefpassBode}
 \end{figure}
 
-Die blaue Kurve stellt den geamten Tiefpass dar, die violette Kurve nur einen einfachen Tiefpass. Somit erkennt man anhand der Steigung einen Tiefpass der Ordnung 2.
+Die blaue Kurve stellt den gesamten Tiefpass dar, die violette Kurve nur einen einfachen Tiefpass. Somit erkennt man anhand der Steigung einen Tiefpass der Ordnung 2.
 
 \subsubsection{Ergebnisse}
 
@@ -244,10 +244,10 @@ Bei den Bildern des Hochpasses stellt die blaue Kurve unser Eingangssignal und d
 Bei $f=114Hz$ (Abbildung \ref{fig:Hochpass_114}) wird die Eingangsspannung maximal gedämpft. Dies zeigt sich durch eine quasi konstante Ausgangsspannung bei 0V. Dieses Verhalten erwarten wir von einem Hochpass.
 \\
 \\
-Bei $f=1.63kHz$ (Abbildung \ref{fig:Hochpass_1,63k}) (nah unserer Grenzfrequenz) wird die Eingangsspannung ca. halb gefämpft. Dies kann man an den Amplituden der sinusförmigen Spannungsbilder ablesen und ergibt sich aus den -3dB Verstärkung bei der Grenzfrequenz.
+Bei $f=1.63kHz$ (Abbildung \ref{fig:Hochpass_1,63k}) (nah unserer Grenzfrequenz) wird die Eingangsspannung ca. halb gedämpft. Dies kann man an den Amplituden der sinusförmigen Spannungsbilder ablesen und ergibt sich aus den -3dB Verstärkung bei der Grenzfrequenz.
 \\
 \\
-Bei $f=10kHz$ (Abbildung \ref{fig:Hochpass_10k}) wird die Eingangsspannung infinitisimal klein gefämpft. Hierbei überlappen sich Ein- und Ausgangsspannung. Wir erwarten dieses Verhalten bei einem Hochpass.
+Bei $f=10kHz$ (Abbildung \ref{fig:Hochpass_10k}) wird die Eingangsspannung infinitesimal klein gedämpft. Hierbei überlappen sich Ein- und Ausgangsspannung. Wir erwarten dieses Verhalten bei einem Hochpass.
 
 \newpage
 \begin{figure}[htb]
@@ -272,10 +272,10 @@ Bei $f=10kHz$ (Abbildung \ref{fig:Hochpass_10k}) wird die Eingangsspannung infin
 Bei den Bildern des Tiefpasses stellt die blaue Kurve unser Eingangssignal und die grüne Kurve unser Ausgangssignal dar.
 \\
 \\
-Bei $f=114Hz$ (Abbildung \ref{fig:Tiefpass_114}) wird die Eingangsspannung infinitisimal klein gedämpft.  Die Amplitude des Ein- und Ausgangssignals ist dabei quasi identisch.
+Bei $f=114Hz$ (Abbildung \ref{fig:Tiefpass_114}) wird die Eingangsspannung infinitesimal klein gedämpft.  Die Amplitude des Ein- und Ausgangssignals ist dabei quasi identisch.
 \\
 \\
-Bei $f=1.63kHz$ (Abbildung \ref{fig:Tiefpass_1,63k}) (nah unserer Grenzfrequenz) wird die Eingangsspannung ca. halb gefämpft. Dies kann man an den Amplituden der sinusförmigen Spannungsbilder ablesen und ergibt sich aus den -3dB Verstärkung bei der Grenzfrequenz. Dieses Spannungsbild ist dem des Hochpasses bei dieser Frequenz fast gleich.
+Bei $f=1.63kHz$ (Abbildung \ref{fig:Tiefpass_1,63k}) (nah unserer Grenzfrequenz) wird die Eingangsspannung ca. halb gedämpft. Dies kann man an den Amplituden der sinusförmigen Spannungsbilder ablesen und ergibt sich aus den -3dB Verstärkung bei der Grenzfrequenz. Dieses Spannungsbild ist dem des Hochpasses bei dieser Frequenz fast gleich.
 \\
 \\
 Bei $f=10kHz$ (Abbildung \ref{fig:Tiefpass_10k}) wird die Eingangsspannung maximal gedämpft. Dies zeigt sich durch eine quasi konstante Ausgangsspannung bei 0V. Dieses Verhalten erwarten wir von einem Tiefpass.
@@ -296,7 +296,7 @@ Bei $f=10kHz$ (Abbildung \ref{fig:Tiefpass_10k}) wird die Eingangsspannung maxim
 
 \subsubsection{Diskussion}
 
-Unsere beiden Filterschaltungen funktionieren in der Praxis simultan zum simulierten Verhalten. Dabei treten zwar kleine Messungenauigkeiten auf, jedoch verhalten sich Phasen- und Amplitudengänge der Ausgangsspannungen wie erwartet für die konstruierten Filder. Der Hochpass filtert tiefe Frequenzen der Ausgangsspannung, der Tiefpass filtert hohe Frequenzen. 
+Unsere beiden Filterschaltungen funktionieren in der Praxis simultan zum simulierten Verhalten. Dabei treten zwar kleine Messungenauigkeiten auf, jedoch verhalten sich Phasen- und Amplitudengänge der Ausgangsspannungen wie erwartet für die konstruierten Filter. Der Hochpass filtert tiefe Frequenzen der Ausgangsspannung, der Tiefpass filtert hohe Frequenzen. 
 \\
 \\
 Die gemessenen Bode-Diagramme des Hoch- und Tiefpasses stimmen mit den simulierten Diagrammen überein. Dabei treten beim Hochpass Messfehler bei sehr kleinen Frequenzen auf, aber der allgemeine Kurvenverlauf ist gleich. Die Messfehler kommen durch das Programm LenLab oder durch äußere Einflüsse zustande.
@@ -341,7 +341,7 @@ Die ermittelte Kurve zeigt, dass einer der Filter eine negative Spannung erzeugt
     \label{fig:AddiererAusgangsspannungInvertiert}
 \end{figure}
 
-Wir beobachten nun eine maximale Dämpfung des Signals bei 100Hz und Maximum bei ca 6000Hz. Die Funktion verläuft nun stetig ohne abrupte Änderung.
+Wir beobachten nun eine maximale Dämpfung des Signals bei 100Hz und Maximum bei ca. 6000Hz. Die Funktion verläuft nun stetig ohne abrupte Änderung.
 \\
 \\
 Einen solchen Filter bezeichnet man als 2-Band-Equalizer, da dieser aus einem kombinierten Hoch- und Tiefpass besteht und die jeweiligen Ausgangssignale des Hoch- und Tiefpasses einstellbar kombiniert werden können.
@@ -398,7 +398,7 @@ Durch die Einstellungen an den Potentiometern lässt sich einstellen, welche Fre
     \label{fig:Gesamtschaltung_Test_90_10}
 \end{figure}
 
-Die blaue Kurve stellt den Amplitudeverlaug der Ausgangsspannung dar, die rote Kurve den phasenverlauf.
+Die blaue Kurve stellt den Amplitudenverlauf der Ausgangsspannung dar, die rote Kurve den Phasenverlauf.
 
 \newpage
 
